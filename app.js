@@ -53,11 +53,11 @@ inquirer
                 });
         } else if (role === "Manager") {
             inquirer.prompt([{
-                name: "officenumber",
+                name: "officeNumber",
                 type: "input",
                 message: "What is your office number?"
             }]).then(answer => {
-                let newMana = new Manager(answers.name, answers.id, answers.email, answers.officeNum)
+                let newMana = new Manager(answers.name, answers.id, answers.email, answer.officeNumber)
                 console.log(newMana);
             })
                 .catch(error => {
@@ -69,8 +69,8 @@ inquirer
                     type: "input",
                     message: "What school do you attend?"
                 }]).then(answer => {
-                    let newStu = new Student(answers.name, answers.id, answers.email, answers.school)
-                    console.log(newMana);
+                    let newStu = new Intern(answers.name, answers.id, answers.email, answer.school)
+                    console.log(newStu);
                 })
                     .catch(error => {
                         console.log(error)
