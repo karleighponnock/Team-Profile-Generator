@@ -29,16 +29,62 @@ inquirer
         name: "email",
         type: "input",
         message: "What is your e-mail?"
+    }, {
+        name: "role",
+        type: "list",
+        message: "What role?",
+        choices: ["Manager", "Engineer", "Intern"]
     }
 
     ])
     .then(answers => {
-        console.log(answers);
+        let role = answers.role
+        if (role === "Engineer") {
+            inquirer.prompt([{
+                name: "github",
+                type: "input",
+                message: "What is your github?"
+            }]).then(answer => {
+                let newEng = new Engineer(answers.name, answers.id, answers.email, answer.github)
+                console.log(newEng);
+            })
+                .catch(error => {
+                    console.log(error)
+                });
+        } else if (role === "Manager") {
+            inquirer.prompt([{
+                name: "officenumber",
+                type: "input",
+                message: "What is your office number?"
+            }]).then(answer => {
+                let newMana = new Manager(answers.name, answers.id, answers.email, answers.officeNum)
+                console.log(newMana);
+            })
+                .catch(error => {
+                    console.log(error)
+                });
+            } else if (role === "Intern") {
+                inquirer.prompt([{
+                    name: "school",
+                    type: "input",
+                    message: "What school do you attend?"
+                }]).then(answer => {
+                    let newStu = new Student(answers.name, answers.id, answers.email, answers.school)
+                    console.log(newMana);
+                })
+                    .catch(error => {
+                        console.log(error)
+                    });
+        }
+
         // Use user feedback for... whatever!!
     })
+
+
     .catch(error => {
         console.log(error)
     });
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
