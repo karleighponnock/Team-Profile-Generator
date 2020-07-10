@@ -1,5 +1,3 @@
-# Team-Profile-Generator
-team generator command line application
 
 # Team-Profile-Generator
 * This application is a team generator command line application.
