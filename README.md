@@ -2,7 +2,7 @@
 # Team-Profile-Generator
 * This application is a team generator command line application.
 
-* I used the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the * user for their email, id, and specific information based on their role with the company.
+* I used the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the user for their email, id, and specific information based on their role with the company.
 
  * In addition to this set of information intern must also provide their school, engineers must provide their GitHub username and managers must provide their office number.
 
